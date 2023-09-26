@@ -9,7 +9,7 @@ function setup() {
   cnv =createCanvas(600, 600);
   cnv.parent("sketch-holder");
   background(0);
-  ustate = createInput('a');
+  ustate = createInput('I feel sad');
   ustate.style('font-size', '20px');;
   pout= createP("say something like 'I like chocolate'")
   createButton("generate").mousePressed(writeSent)
@@ -25,7 +25,7 @@ function writeSent(){
 }
 
 function onInput() {
-  clear();
+  background(0)
   
   fill("green")
   strokeWeight(10)
@@ -36,4 +36,9 @@ function onInput() {
   textSize(30)
   text(ustate.value(), 20, 140)
 }
- 
+/*
+for (let [key, value] of Object.entries(yourobject)) {
+  console.log(key, value);
+}
+
+*/
