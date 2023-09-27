@@ -4,6 +4,7 @@ const isAlpha = str => /^[a-zA-Z]*$/.test(str);
 // the api fails on 
 let cnv, ustate, pout, enterbutt
 let y=-100
+let foo = new p5.Speech();
 
 function setup() {
   cnv =createCanvas(800, 600);
@@ -33,6 +34,7 @@ function writeSent(){
 function onInput() {
  // background(0)
   // move the cursor
+  
   y+=100
   if (y>=600){
     y=0
@@ -78,7 +80,54 @@ function botReply(){
   fill("black")
   textSize(20)
   noStroke()
-  text("bot's reply" , 20, y+50)
+  let q = gwq(ustate.value())
+  text(q , 20, y+50)
+  foo.speak(q);
 
 }
 
+function gwq(response){
+  let rlist = response.toLowerCase().trim().split(' ')
+  print(rlist)
+   let refertobot = ["you","yours"]
+    for(const i of refertobot){
+        if (rlist.includes(i)){
+          
+          return "Please don't bring me into this.  I am concerned with you."
+        }
+      }
+    //check for questions words in interogative positions only 
+   let  qwords = ["do","what", "how","why","when"]
+    for(const i of qwords){
+        if (i ===rlist[0]){
+            return "I am asking the questions here!!!"
+        }
+    }
+    let replaceit = {
+        "i":"you",
+        "am":"are",
+        "me":"you",
+        "mine":"yours",
+        "my":"your",
+        "myself":"yourself",
+        "because": "",
+        }
+
+    for (let [key, value] of Object.entries(replaceit)) {
+          console.log(key, value);
+          for(let i =0; i<rlist.length;i++){
+            if (rlist[i] === key){
+              rlist[i]= value
+
+            }
+          }
+        }
+     
+    resultPart =rlist.join(' ').trim()
+    // now clear the input for the next time
+    ustate.value("") 
+
+    return "Why do you think "+resultPart+"?"
+
+
+}
