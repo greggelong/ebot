@@ -30,12 +30,12 @@ function onInput() {
  // background(0)
   // move the cursor
   y+=100
-  if (y>600){
+  if (y>=600){
     y=0
     background(0)
   }
   // put the bar
-  fill("green")
+  fill("cyan")
   strokeWeight(10)
   rect(0, y, 600, 100)
  
@@ -44,10 +44,34 @@ function onInput() {
   fill("black")
   textSize(30)
   text(ustate.value(), 20, y+50)
-  
+  botReply()
 }
 /*
 for (let [key, value] of Object.entries(yourobject)) {
+  console.log(key, value);
+}
+
+*/
+
+function botReply(){
+  y+=100
+  if (y>=600){
+    y=0
+    background(0)
+  }
+  // put the bar
+  fill("yellow")
+  strokeWeight(10)
+  rect(0, y, 600, 100)
+ 
+  
+  // Display the text entered
+  fill("black")
+  textSize(30)
+  text("bot's reply" , 20, y+50)
+
+}
+
   console.log(key, value);
 }
 
