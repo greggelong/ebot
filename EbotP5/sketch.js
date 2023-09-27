@@ -48,7 +48,8 @@ function onInput() {
   // Display the text entered
   fill("black")
   
-  textSize(60-ustate.value().length)
+  textSize(20)
+  print(50-ustate.value().length,ustate.value().length)
   noStroke()
   text(ustate.value(), 20, y+50)
   botReply()
