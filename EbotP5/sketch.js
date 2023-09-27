@@ -20,6 +20,7 @@ function setup() {
   enterbutt= select('#enbutton').mousePressed(writeSent)
   pout= createP("say something like 'I like chocolate'")
   stroke(222,93,131)
+  foo.speak("Hello, I'm ELIZA.  I will ask you why questions repeatedly. Prepare to have your values and fears revealed.")
   
 
  
