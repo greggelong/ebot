@@ -10,7 +10,9 @@ function setup() {
   cnv.parent("sketch-holder");
   background(222,93,131);
   ustate = createInput('I feel sad');
-  ustate.style('font-size', '20px');;
+  ustate.style('font-size', '20px');
+  ustate.style('width', '600px');
+  
   
   createButton("ENTER").mousePressed(writeSent)
   pout= createP("say something like 'I like chocolate'")
