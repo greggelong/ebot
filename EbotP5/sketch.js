@@ -96,7 +96,7 @@ function gwq(response){
     for(const i of refertobot){
         if (rlist.includes(i)){
           
-          return "Please don't bring me into this.  I am concerned with you."
+          return "Please don't bring me into this.  I am concerned only about you."
         }
       }
     //check for questions words in interogative positions only 
