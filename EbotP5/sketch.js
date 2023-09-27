@@ -88,7 +88,9 @@ function botReply(){
 }
 
 function gwq(response){
-  let rlist = response.toLowerCase().trim().split(' ')
+  
+  let rlist = response.toLowerCase().trim().replace(/[\/#$%\^&\*;:.?!{}=\-_`'"~()]/g,"").split(' ')
+  
   print(rlist)
    let refertobot = ["you","yours"]
     for(const i of refertobot){
