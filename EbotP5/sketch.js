@@ -71,8 +71,3 @@ function botReply(){
   text("bot's reply" , 20, y+50)
 
 }
-
-  console.log(key, value);
-}
-
-*/
