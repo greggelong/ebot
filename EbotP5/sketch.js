@@ -6,13 +6,14 @@ let cnv, ustate, pout, enterbutt
 let y=-100
 
 function setup() {
-  cnv =createCanvas(600, 600);
+  cnv =createCanvas(800, 600);
   cnv.parent("sketch-holder");
   background(222,93,131);
   
   ustate = select('#input');
   ustate.style('font-size', '20px');
   ustate.style('width', '600px');
+  ustate.style('background-color','cyan')
   
   
   enterbutt= select('#enbutton').mousePressed(writeSent)
@@ -41,12 +42,13 @@ function onInput() {
   fill("cyan")
   strokeWeight(10)
   stroke(222,93,131)
-  rect(0, y, 600, 100)
+  rect(0, y, 800, 100)
  
   
   // Display the text entered
   fill("black")
-  textSize(30)
+  
+  textSize(60-ustate.value().length)
   noStroke()
   text(ustate.value(), 20, y+50)
   botReply()
@@ -68,12 +70,12 @@ function botReply(){
   fill("yellow")
   strokeWeight(10)
   stroke(222,93,131)
-  rect(0, y, 600, 100)
+  rect(0, y, 800, 100)
  
   
   // Display the text entered
   fill("black")
-  textSize(30)
+  textSize(20)
   noStroke()
   text("bot's reply" , 20, y+50)
 
