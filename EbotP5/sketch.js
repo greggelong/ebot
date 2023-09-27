@@ -2,19 +2,20 @@ const isAlpha = str => /^[a-zA-Z]*$/.test(str);
 
 // great regex is alpha for string check
 // the api fails on 
-let cnv, ustate, pout
+let cnv, ustate, pout, enterbutt
 let y=-100
 
 function setup() {
   cnv =createCanvas(600, 600);
   cnv.parent("sketch-holder");
   background(222,93,131);
-  ustate = createInput('I feel sad');
+  
+  ustate = select('#input');
   ustate.style('font-size', '20px');
   ustate.style('width', '600px');
   
   
-  createButton("ENTER").mousePressed(writeSent)
+  enterbutt= select('#enbutton').mousePressed(writeSent)
   pout= createP("say something like 'I like chocolate'")
   stroke(222,93,131)
   
