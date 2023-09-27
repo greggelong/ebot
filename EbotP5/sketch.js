@@ -89,7 +89,7 @@ function botReply(){
 
 function gwq(response){
   
-  let rlist = response.toLowerCase().trim().replace(/[\/#$%\^&\*;:.?!{}=\-_`'"~()]/g,"").split(' ')
+  let rlist = response.toLowerCase().trim().replace(/[\/#$%\^&\*;:.?!{}=\-_`"~()]/g,"").split(' ') // don't remove  ' as we need it for contraction i'm
   
   print(rlist)
    let refertobot = ["you","yours"]
