@@ -110,6 +110,7 @@ function gwq(response){
         "mine":"yours",
         "my":"your",
         "myself":"yourself",
+        "i'm":"you're",
         "because": "",
         }
 
